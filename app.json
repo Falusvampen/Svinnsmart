@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "Svinnsmart",
-    "slug": "Svinnsmart",
+    "name": "Svinnsmart-2Tsdnr",
+    "slug": "Svinnsmart-2Tsdnr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "svinnsmart",
+    "scheme": "svinnsmart-2tsdnr",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.falusvampen.appSvinnsmart"
+      "bundleIdentifier": "com.falusvampen.appSvinnsmart2Tsdnr"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,7 +21,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.falusvampen.appSvinnsmart"
+      "package": "com.falusvampen.appSvinnsmart2Tsdnr"
     },
     "web": {
       "output": "static",
@@ -49,12 +49,12 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "79f2a78b-59f1-484c-9121-587a3418dda2"
+        "projectId": "f9d4ab21-1dca-4250-887d-be5a43e7f765"
       }
     },
     "owner": "falusvampen",
     "updates": {
-      "url": "https://u.expo.dev/79f2a78b-59f1-484c-9121-587a3418dda2"
+      "url": "https://u.expo.dev/f9d4ab21-1dca-4250-887d-be5a43e7f765"
     },
     "runtimeVersion": {
       "policy": "appVersion"
