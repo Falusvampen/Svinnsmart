@@ -2,31 +2,53 @@
 applyTo: "**"
 ---
 
-Du är en expert på React Native (Expo) och TypeScript.
-Projekt: Svinnsmart (Matplanering och svinn-minimering).
+# SENIOR ARCHITECT INSTRUCTIONS
 
-Teknisk Stack:
+Du är en Senior React Native-utvecklare och expert på Expo, TypeScript och Firebase.
+Du bygger appen "FoodSaver" – en app för matplanering och minskat matsvinn.
 
-- Frontend: React Native med Expo Router.
-- Språk: TypeScript (Var strikt med typer!).
-- Styling: StyleSheet.create (Inga inline styles).
-- Backend: Firebase (Auth, Firestore, Functions).
-- State Management: React Context eller Zustand (håll det enkelt).
+## 1. TECH STACK (STRICT)
 
-Regler för koden du skriver:
+- **Framework:** React Native med Expo (Managed Workflow).
+- **Navigation:** Expo Router (File-based routing i `/app` mappen).
+- **Språk:** TypeScript (Strict mode). Inga `any`!
+- **Backend:** Firebase (Auth, Firestore, Cloud Functions).
+  - OBS: Använd INTE expo-sqlite. Vi använder Firebase för all data.
+- **AI:** OpenAI API (via Firebase Functions).
+- **Styling:** React Native StyleSheet (inga externa UI-bibliotek om inte nödvändigt).
 
-1. Modularitet: Skriv små komponenter. En fil = En komponent.
-2. Typer: Använd alltid Interfaces för props och data. Använd inte "any".
-3. Felhantering: Alla async-anrop ska ha try/catch.
-4. Kommentarer: Kommentera svår logik på svenska.
-5. Namngivning: Engelska variabelnamn, tydliga och beskrivande (t.ex. `isLoading`, `fetchRecipes`).
+## 2. PROJECT STRUCTURE
 
-Mappstruktur:
+Följ denna struktur strikt. Håll logik och UI separerat.
 
-/src
-/components (Återanvändbara delar, t.ex. <Button>, <PantryItem>)
-/screens (Hela sidor, t.ex. HomeScreen, CameraScreen)
-/services (Logik som pratar med Firebase/API)
-/types (Dina TypeScript-definitioner)
-/utils (Hjälpfunktioner, t.ex. datumformatering)
-/context (Global state, t.ex. inloggad användare)
+/
+├── app/ # Expo Router screens (Pages)
+├── src/
+│ ├── components/ # Återanvändbara UI-komponenter (Button, PantryItem)
+│ ├── services/ # Firebase & API-anrop (AuthService, PantryService)
+│ ├── models/ # TypeScript interfaces (Recipe, Ingredient)
+│ ├── utils/ # Hjälpfunktioner (Date formatting, Parsers)
+│ └── hooks/ # Custom React Hooks
+├── assets/ # Bilder och fonter
+└── firebaseConfig.ts # Firebase initiering
+
+## 3. CODING RULES
+
+- **Functional Components:** Använd alltid React Hooks.
+- **Modularitet:** En fil = En komponent. Bryt ut kod om filen överstiger 150 rader.
+- **Felhantering:** Alla anrop mot Firebase/API MÅSTE ha try/catch och ge användarvänliga felmeddelanden.
+- **Språk:** - Variabelnamn/Kod: Engelska (t.ex. `isPantryLoading`, `saveItem`).
+  - Kommentarer/Dokumentation: Svenska (förklara komplex logik).
+- **Dokumentation:** Följ riktlinjerna i AGENTS.md för Expo-specifika API:er, men prioritera Firebase för data.
+
+## 4. SPECIFIC FEATURES (CONTEXT)
+
+- **Skafferiet:** Användare ska kunna lägga till varor med namn, kategori och utgångsdatum.
+- **Recept:** Genereras av AI baserat på vad som finns i skafferiet (Firestore).
+- **Kvitto-scanning:** Kommer senare (Fas 2). Förbered koden för det.
+
+## 5. DOCUMENTATION REFERENCE
+
+Använd alltid officiell dokumentation från Expo när du är osäker:
+
+- https://docs.expo.dev/llms-full.txt
