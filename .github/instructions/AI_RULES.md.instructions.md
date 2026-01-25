@@ -20,3 +20,13 @@ Regler för koden du skriver:
 3. Felhantering: Alla async-anrop ska ha try/catch.
 4. Kommentarer: Kommentera svår logik på svenska.
 5. Namngivning: Engelska variabelnamn, tydliga och beskrivande (t.ex. `isLoading`, `fetchRecipes`).
+
+Mappstruktur:
+
+/src
+/components (Återanvändbara delar, t.ex. <Button>, <PantryItem>)
+/screens (Hela sidor, t.ex. HomeScreen, CameraScreen)
+/services (Logik som pratar med Firebase/API)
+/types (Dina TypeScript-definitioner)
+/utils (Hjälpfunktioner, t.ex. datumformatering)
+/context (Global state, t.ex. inloggad användare)
