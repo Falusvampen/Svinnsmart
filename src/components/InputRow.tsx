@@ -1,6 +1,6 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
-import { TextInput, View } from "react-native";
+import { TextInput, TextInputProps, View } from "react-native";
 import useTheme from "../hooks/useTheme";
 
 type Props = {
@@ -9,7 +9,8 @@ type Props = {
   value: string;
   onChangeText: (t: string) => void;
   secureTextEntry?: boolean;
-  keyboardType?: any;
+  keyboardType?: TextInputProps["keyboardType"];
+  autoCapitalize?: TextInputProps["autoCapitalize"];
   accessibilityLabel?: string;
   style?: any;
   iconStyle?: any;
@@ -24,6 +25,7 @@ export const InputRow: React.FC<Props> = ({
   onChangeText,
   secureTextEntry,
   keyboardType,
+  autoCapitalize,
   accessibilityLabel,
   style,
   iconStyle,
@@ -59,7 +61,10 @@ export const InputRow: React.FC<Props> = ({
         placeholder={placeholder}
         placeholderTextColor={theme.colors.textMuted}
         keyboardType={keyboardType}
-        autoCapitalize={keyboardType === "email-address" ? "none" : "sentences"}
+        autoCapitalize={
+          autoCapitalize ??
+          (keyboardType === "email-address" ? "none" : "sentences")
+        }
         secureTextEntry={secureTextEntry}
         value={value}
         onChangeText={onChangeText}
