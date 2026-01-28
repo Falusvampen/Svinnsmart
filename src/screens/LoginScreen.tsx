@@ -2,11 +2,12 @@ import * as WebBrowser from "expo-web-browser";
 import React from "react";
 import {
   ActivityIndicator,
-  KeyboardAvoidingView,
+  Keyboard,
   Platform,
   Pressable,
   ScrollView,
   Text,
+  TouchableWithoutFeedback,
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -59,13 +60,15 @@ export const LoginScreen: React.FC = () => {
       <View style={styles.bgCircleTwo} />
 
       <SafeAreaView style={styles.safeArea}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={{ flex: 1 }}
-        >
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <ScrollView
             contentContainerStyle={styles.scrollContent}
             showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            keyboardDismissMode={
+              Platform.OS === "ios" ? "interactive" : "on-drag"
+            }
+            contentInsetAdjustmentBehavior="automatic"
           >
             <View style={styles.card}>
               <AuthHeader
@@ -84,7 +87,7 @@ export const LoginScreen: React.FC = () => {
                   value={email}
                   onChangeText={setEmail}
                   accessibilityLabel="email-input"
-                  style={styles.inputRow}
+                  style={[styles.inputRow, styles.inputRowElevated]}
                   iconStyle={styles.inputIcon}
                   inputStyle={styles.input}
                 />
@@ -96,7 +99,7 @@ export const LoginScreen: React.FC = () => {
                   value={password}
                   onChangeText={setPassword}
                   accessibilityLabel="password-input"
-                  style={styles.inputRow}
+                  style={[styles.inputRow, styles.inputRowElevated]}
                   iconStyle={styles.inputIcon}
                   inputStyle={styles.input}
                 />
@@ -161,7 +164,7 @@ export const LoginScreen: React.FC = () => {
               />
             </View>
           </ScrollView>
-        </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
       </SafeAreaView>
     </ThemedView>
   );
