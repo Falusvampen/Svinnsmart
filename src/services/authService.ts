@@ -26,8 +26,14 @@ export const AuthService = {
         pass,
       );
       return { user: userCredential.user };
-    } catch (e: any) {
-      return { error: e.message };
+    } catch (e: unknown) {
+      const msg =
+        e instanceof Error
+          ? e.message
+          : typeof e === "string"
+            ? e
+            : "Kunde inte skapa konto.";
+      return { error: msg };
     }
   },
 
@@ -40,8 +46,14 @@ export const AuthService = {
         pass,
       );
       return { user: userCredential.user };
-    } catch (e: any) {
-      return { error: e.message };
+    } catch (e: unknown) {
+      const msg =
+        e instanceof Error
+          ? e.message
+          : typeof e === "string"
+            ? e
+            : "Kunde inte logga in.";
+      return { error: msg };
     }
   },
 
@@ -56,8 +68,14 @@ export const AuthService = {
       const credential = GoogleAuthProvider.credential(idToken, accessToken);
       const userCredential = await signInWithCredential(auth, credential);
       return { user: userCredential.user };
-    } catch (e: any) {
-      return { error: e.message };
+    } catch (e: unknown) {
+      const msg =
+        e instanceof Error
+          ? e.message
+          : typeof e === "string"
+            ? e
+            : "Kunde inte logga in med Google-token.";
+      return { error: msg };
     }
   },
 
@@ -69,8 +87,14 @@ export const AuthService = {
       const credential = FacebookAuthProvider.credential(accessToken);
       const userCredential = await signInWithCredential(auth, credential);
       return { user: userCredential.user };
-    } catch (e: any) {
-      return { error: e.message };
+    } catch (e: unknown) {
+      const msg =
+        e instanceof Error
+          ? e.message
+          : typeof e === "string"
+            ? e
+            : "Kunde inte logga in med Facebook-token.";
+      return { error: msg };
     }
   },
 
@@ -78,7 +102,7 @@ export const AuthService = {
   logout: async () => {
     try {
       await signOut(auth);
-    } catch (e) {
+    } catch (e: unknown) {
       console.error(e);
     }
   },

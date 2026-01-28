@@ -15,14 +15,6 @@ import {
   ViewStyle,
 } from "react-native";
 
-// Aktivera LayoutAnimation för Android
-// if (
-//   Platform.OS === "android" &&
-//   UIManager.setLayoutAnimationEnabledExperimental
-// ) {
-//   UIManager.setLayoutAnimationEnabledExperimental(true);
-// }
-
 // Flytta ut ikon-mappningen så den inte skapas om vid varje render
 // Detta är en "fallback" om du inte satt ikon i _layout.tsx
 const iconMap: Record<string, keyof typeof Feather.glyphMap> = {
