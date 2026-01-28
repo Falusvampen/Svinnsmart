@@ -1,10 +1,10 @@
 // En återanvändbar Gradient-komponent
 // Kommentarer: Förklara komplex logik på svenska.
 
+import { useTheme } from "@/hooks/useTheme";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { StyleProp, ViewStyle } from "react-native";
-import { useTheme } from "../../hooks/useTheme";
 
 export type GradientVariant =
   | "primary"

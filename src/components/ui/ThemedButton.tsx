@@ -1,6 +1,6 @@
+import { useTheme } from "@/hooks/useTheme";
 import React from "react";
 import { Pressable, StyleSheet, Text } from "react-native";
-import { useTheme } from "../../hooks/useTheme";
 
 type Props = {
   title: string;

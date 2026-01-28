@@ -5,7 +5,7 @@ import { ThemedView } from "../../src/components/ui/ThemedView";
 export default function ProfileTab() {
   return (
     <ThemedView style={styles.container}>
-      <Text style={styles.text}>Hello World — Profile Tab</Text>
+      <Text style={styles.text}>Hello World — Stats Tab</Text>
     </ThemedView>
   );
 }
