@@ -80,7 +80,7 @@ export default function Index() {
 
       // Lyckad inloggning
       // Alert.alert("Välkommen!", `Inloggning lyckades för ${email}`); // Valfritt
-      router.replace("/");
+      router.replace("./(tabs)");
     } catch (e: any) {
       setError(e.message ?? "Något gick fel.");
     } finally {
