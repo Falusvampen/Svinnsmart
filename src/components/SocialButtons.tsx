@@ -1,7 +1,8 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, View } from "react-native";
-import useTheme from "../hooks/useTheme";
+import GoogleLogo from "../../assets/images/google-g.svg";
+import { useTheme } from "../hooks/useTheme";
 
 type Props = {
   onPressGoogle?: () => void;
@@ -62,7 +63,7 @@ export const SocialButtons: React.FC<Props> = ({
         accessibilityHint="Öppnar Google-inloggning i nytt fönster"
         accessibilityRole="button"
       >
-        <FontAwesome name="google" size={26} color="#fff" />
+        <GoogleLogo width={26} height={26} />
       </Pressable>
 
       <Pressable

@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { Appearance, ColorSchemeName } from "react-native";
-import { AppTheme, darkTheme, lightTheme } from "../../app/constants/theme";
+import { AppTheme, darkTheme, lightTheme } from "../constants/theme";
 
 type ThemeContextType = {
   theme: AppTheme;

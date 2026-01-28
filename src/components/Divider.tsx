@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-import useTheme from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 
 type Props = {
   text?: string;

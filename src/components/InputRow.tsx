@@ -1,7 +1,15 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
-import { TextInput, View } from "react-native";
-import useTheme from "../hooks/useTheme";
+import {
+  StyleProp,
+  TextInput,
+  TextInputProps,
+  TextStyle,
+  View,
+  ViewStyle,
+} from "react-native";
+import { makeStyles } from "../hooks/makeStyles"; // Importera din nya helper!
+import { useTheme } from "../hooks/useTheme"; // Vi behöver fortfarande denna för placeholder-färgerna i JSX
 
 type Props = {
   icon: React.ComponentProps<typeof FontAwesome>["name"];
@@ -9,14 +17,38 @@ type Props = {
   value: string;
   onChangeText: (t: string) => void;
   secureTextEntry?: boolean;
-  keyboardType?: any;
+  keyboardType?: TextInputProps["keyboardType"];
+  autoCapitalize?: TextInputProps["autoCapitalize"];
   accessibilityLabel?: string;
-  style?: any;
-  iconStyle?: any;
-  inputStyle?: any;
+  // Bättre typning än 'any':
+  style?: StyleProp<ViewStyle>;
+  iconStyle?: StyleProp<TextStyle>; // Ikoner beter sig ofta som text stilmässigt
+  inputStyle?: StyleProp<TextStyle>;
 };
 
-// Återanvändbar inmatningsrad med ikon
+// 1. Definiera stilar utanför med makeStyles
+const useStyles = makeStyles((theme) => ({
+  container: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: theme.colors.muted,
+    borderRadius: theme.radius.sm,
+    paddingHorizontal: 12,
+    marginBottom: theme.spacing.sm,
+    height: 48,
+  },
+  icon: {
+    marginRight: 8,
+    color: theme.colors.textMuted, // Standardfärg definieras här
+  },
+  input: {
+    flex: 1,
+    height: "100%",
+    padding: 0,
+    color: theme.colors.text,
+  },
+}));
+
 export const InputRow: React.FC<Props> = ({
   icon,
   placeholder,
@@ -24,42 +56,34 @@ export const InputRow: React.FC<Props> = ({
   onChangeText,
   secureTextEntry,
   keyboardType,
+  autoCapitalize,
   accessibilityLabel,
   style,
   iconStyle,
   inputStyle,
 }) => {
-  const { theme } = useTheme();
+  // 2. Använd dina hooks
+  const styles = useStyles();
+  const { theme } = useTheme(); // Behövs för placeholderTextColor
+
   return (
-    <View
-      style={[
-        {
-          flexDirection: "row",
-          alignItems: "center",
-          backgroundColor: theme.colors.muted,
-          borderRadius: theme.radius.sm,
-          paddingHorizontal: 12,
-          marginBottom: theme.spacing.sm,
-          height: 48,
-        },
-        style,
-      ]}
-    >
+    <View style={[styles.container, style]}>
       <FontAwesome
         name={icon}
         size={16}
+        // Notera: Vi kan sätta färg i style-objektet, men ibland behövs color-proppen explicit för ikoner
         color={theme.colors.textMuted}
-        style={[{ marginRight: 8 }, iconStyle]}
+        style={[styles.icon, iconStyle]}
       />
       <TextInput
-        style={[
-          { flex: 1, height: "100%", padding: 0, color: theme.colors.text },
-          inputStyle,
-        ]}
+        style={[styles.input, inputStyle]}
         placeholder={placeholder}
         placeholderTextColor={theme.colors.textMuted}
         keyboardType={keyboardType}
-        autoCapitalize={keyboardType === "email-address" ? "none" : "sentences"}
+        autoCapitalize={
+          autoCapitalize ??
+          (keyboardType === "email-address" ? "none" : "sentences")
+        }
         secureTextEntry={secureTextEntry}
         value={value}
         onChangeText={onChangeText}

@@ -15,7 +15,7 @@ Du bygger appen "FoodSaver" – en app för matplanering och minskat matsvinn.
 - **Backend:** Firebase (Auth, Firestore, Cloud Functions).
   - OBS: Använd INTE expo-sqlite. Vi använder Firebase för all data.
 - **AI:** OpenAI API (via Firebase Functions).
-- **Styling:** React Native StyleSheet (inga externa UI-bibliotek om inte nödvändigt).
+- **Styling:** React Native StyleSheet (inga externa UI-bibliotek om inte nödvändigt). Kolla alltid THEME.md för designriktlinjer och använd `makeStyles` hooken.
 
 ## 2. PROJECT STRUCTURE
 
@@ -45,7 +45,7 @@ Följ denna struktur strikt. Håll logik och UI separerat.
 
 - **Skafferiet:** Användare ska kunna lägga till varor med namn, kategori och utgångsdatum.
 - **Recept:** Genereras av AI baserat på vad som finns i skafferiet (Firestore).
-- **Kvitto-scanning:** Kommer senare (Fas 2). Förbered koden för det.
+- **Kvitto-scanning:** Kommer senare (Fas 2).
 
 ## 5. DOCUMENTATION REFERENCE
 
