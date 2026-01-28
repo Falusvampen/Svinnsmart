@@ -1,2 +1,5 @@
-import { useTheme as _useTheme } from "../components/ThemeProvider";
-export default _useTheme;
+// src/hooks/useTheme.ts
+import { useTheme } from "../context/ThemeProvider";
+
+export default useTheme;
+export { useTheme };

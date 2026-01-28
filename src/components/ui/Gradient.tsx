@@ -4,7 +4,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { StyleProp, ViewStyle } from "react-native";
-import useTheme from "../../hooks/useTheme";
+import { useTheme } from "../../hooks/useTheme";
 
 export type GradientVariant =
   | "primary"

@@ -2,7 +2,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, View } from "react-native";
 import GoogleLogo from "../../assets/images/google-g.svg";
-import useTheme from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme";
 
 type Props = {
   onPressGoogle?: () => void;

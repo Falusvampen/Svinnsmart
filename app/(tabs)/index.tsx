@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
+import { ThemedView } from "../../src/components/ui/ThemedView";
 
 export default function HomeTab() {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Text style={styles.text}>Hello World — Home Tab</Text>
-    </View>
+    </ThemedView>
   );
 }
 

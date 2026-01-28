@@ -15,6 +15,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { ThemedView } from "../src/components/ui/ThemedView";
 
 // Komponenter
 import { AuthHeader } from "../src/components/AuthHeader";
@@ -23,7 +24,7 @@ import { InputRow } from "../src/components/InputRow";
 import { SocialButtons } from "../src/components/SocialButtons";
 import { ToggleModeRow } from "../src/components/ToggleModeRow";
 import Gradient from "../src/components/ui/Gradient";
-import useTheme from "../src/hooks/useTheme";
+import { useTheme } from "../src/hooks/useTheme";
 import { AuthService } from "../src/services/authService";
 
 WebBrowser.maybeCompleteAuthSession();
@@ -109,7 +110,7 @@ export default function Index() {
   // --- UI ---
 
   return (
-    <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
+    <ThemedView>
       {/* Bakgrundsdekorationer */}
       <Gradient variant="primary" style={styles.gradient} />
       <View style={styles.bgCircleOne} />
@@ -228,7 +229,7 @@ export default function Index() {
           </ScrollView>
         </KeyboardAvoidingView>
       </SafeAreaView>
-    </View>
+    </ThemedView>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TextProps, TextStyle } from "react-native";
-import useTheme from "../../hooks/useTheme";
+import { useTheme } from "../../hooks/useTheme";
 
 type Props = TextProps & {
   variant?: "default" | "muted" | "accent" | "title";

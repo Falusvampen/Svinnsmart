@@ -1,6 +1,6 @@
 import { Stack } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ThemeProvider } from "../src/components/ThemeProvider";
+import { ThemeProvider } from "../src/context/ThemeProvider";
 
 export default function RootLayout() {
   return (

@@ -9,8 +9,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import useTheme from "../../src/hooks/useTheme";
-import type { AppTheme } from "../constants/theme";
+import type { AppTheme } from "../../src/constants/theme";
+import { useTheme } from "../../src/hooks/useTheme";
 
 // Hjälp: Gör route.name mer läsbar och användbar för ikoner/etiketter
 const getBaseRouteName = (raw: string) => {
