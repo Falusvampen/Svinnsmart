@@ -14,6 +14,8 @@ export type ColorTokens = {
   warning: string;
   danger: string;
   border: string;
+  facebook: string;
+  google: string;
   shadow: string; // rgba
 };
 
@@ -127,6 +129,8 @@ export const lightTheme: AppTheme = {
     warning: "#F59E0B", // mer vibrerande amber
     danger: "#EF4444", // klar röd för fel
     border: "#E8F0E8",
+    facebook: "#1877F2",
+    google: "#FFFFFF",
     shadow: "rgba(23, 23, 18, 0.08)",
   },
   typography: {
@@ -215,6 +219,8 @@ export const darkTheme: AppTheme = {
     warning: "#F59E0B",
     danger: "#EF4444",
     border: "#243327",
+    facebook: "#1877F2",
+    google: "#F7F7F7",
     shadow: "rgba(0, 0, 0, 0.6)",
   },
   typography: lightTheme.typography,
