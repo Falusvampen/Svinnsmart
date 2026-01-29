@@ -1,4 +1,4 @@
-// Theme tokens for Svinnsmart (Japandi / environment-friendly mood)
+// Theme tokens for Hasse (Japandi / environment-friendly mood)
 // Kommentarer: Förklara komplex logik på svenska.
 
 export type ColorTokens = {

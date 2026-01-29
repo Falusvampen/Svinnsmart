@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import { getReactNativePersistence, initializeAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Dina nycklar från Svinnsmart-projektet
+// Dina nycklar från Hasse-projektet
 const firebaseConfig = {
   apiKey: "AIzaSyB8Cq_Bb0IJd1zZXMm1d-d-S3CEiWCHtXI",
   authDomain: "svinnsmart.firebaseapp.com",

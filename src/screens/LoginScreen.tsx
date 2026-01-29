@@ -73,7 +73,7 @@ export const LoginScreen: React.FC = () => {
             <View style={styles.card}>
               <AuthHeader
                 style={styles.header}
-                title="Svinnsmart"
+                title="Hasse"
                 titleStyle={styles.logo}
                 subtitleStyle={styles.subtitle}
               />

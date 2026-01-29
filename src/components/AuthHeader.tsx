@@ -12,7 +12,7 @@ type Props = {
 
 // Enkel, dumb header för autentiseringskortet
 export const AuthHeader: React.FC<Props> = ({
-  title = "Svinnsmart",
+  title = "Hasse",
   subtitle = "Minska matsvinn — planera smartare",
   style,
   titleStyle,

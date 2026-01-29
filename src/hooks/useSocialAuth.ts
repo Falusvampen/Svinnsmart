@@ -18,7 +18,7 @@ export const useSocialAuth = () => {
   });
 
   const [, facebookResponse, promptFacebookAsync] = Facebook.useAuthRequest({
-    clientId: process.env.FACEBOOK_APP_ID || "minhemligasvinnsmartsecret",
+    clientId: process.env.FACEBOOK_APP_ID || "minhemligahassesecret",
   });
 
   // När Google returnerar en successful response -> utbyt token mot Firebase credential
