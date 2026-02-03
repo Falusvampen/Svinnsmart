@@ -185,11 +185,12 @@ export const lightTheme: AppTheme = {
       end: [1, 1],
     },
     hero: {
-      // Starkare hero-variant för header/hero-sektioner
-      colors: ["#FBF7F2", "#AEE9A9", "#2EA84D"],
+      // "Soft Horizon" - Mjuk övergång från bakgrund till en blek salvia-grön botten.
+      // Mycket diskret för att inte störa innehållet.
+      colors: ["#FAF8F4", "#E3EDE5", "#D6E6DA"],
       start: [0, 0],
-      end: [1, 0.8],
-      locations: [0, 0.55, 1],
+      end: [0, 1], // Vertikal toning
+      locations: [0, 0.6, 1],
     },
     warm: {
       colors: ["#FFF6F1", "#F6E9DD", "#F0C9A8"],
@@ -268,10 +269,11 @@ export const darkTheme: AppTheme = {
       end: [1, 1],
     },
     hero: {
-      colors: ["#0F0F0D", "#2A3F2F", "#53B35A"],
+      // En subtil "natt-dimma" för dark mode. Väldigt svag ljusning mot botten.
+      colors: ["#0F0F0D", "#151F19", "#1E2B23"],
       start: [0, 0],
-      end: [1, 0.8],
-      locations: [0, 0.6, 1],
+      end: [0, 1],
+      locations: [0, 0.5, 1],
     },
     warm: {
       colors: ["#1B0F0C", "#3A221A", "#6A3F2A"],
@@ -289,43 +291,3 @@ export const darkTheme: AppTheme = {
 
 // Default export (light theme) för enkel import
 export default lightTheme;
-
-/*
-Usage examples (React Native):
-
-import { StyleSheet } from 'react-native';
-import theme from 'app/constants/theme';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: theme.colors.background,
-    padding: theme.spacing.md,
-  },
-  card: {
-    backgroundColor: theme.colors.surface,
-    borderRadius: theme.radius.md,
-    padding: theme.spacing.md,
-    shadowColor: theme.elevation.mid.shadowColor,
-    shadowOffset: theme.elevation.mid.shadowOffset,
-    shadowOpacity: theme.elevation.mid.shadowOpacity,
-    shadowRadius: theme.elevation.mid.shadowRadius,
-    elevation: theme.elevation.mid.elevation,
-  },
-  title: {
-    color: theme.colors.text,
-    fontSize: theme.typography.fontSizes.lg,
-    fontWeight: theme.typography.fontWeights.medium,
-  },
-  subtitle: {
-    color: theme.colors.textMuted,
-    fontSize: theme.typography.fontSizes.sm,
-  },
-});
-
-Design tips:
-- Använd mycket white space och dämpade accenter.
-- Föredra naturinspirerade färger (matt, lite "dusty") framför starka neonfärger.
-- Använd terracotta-accenter sparsamt för att ge värme.
-- Håll UI-element enkla, med rundade hörn och mjuka skuggor (mid-elevation).
-*/

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "1",
+    "title": "Veckohandling",
+    "items": [
+      { "id": "i1", "name": "Mjölk", "checked": false },
+      { "id": "i2", "name": "Ägg", "checked": false },
+      { "id": "i3", "name": "Bröd", "checked": true },
+      { "id": "i4", "name": "Smör", "checked": false },
+      { "id": "i5", "name": "Ost", "checked": true },
+      { "id": "i6", "name": "Grönsaker", "checked": false }
+    ],
+    "updatedAt": 1670000000000
+  },
+  {
+    "id": "2",
+    "title": "Fika med vänner",
+    "items": [
+      { "id": "i7", "name": "Kaffe", "checked": true },
+      { "id": "i8", "name": "Kakor", "checked": false },
+      { "id": "i9", "name": "Frukt", "checked": false }
+    ],
+    "updatedAt": 1670500000000
+  }
+]
