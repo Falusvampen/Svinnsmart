@@ -46,7 +46,7 @@ export const SocialButtons: React.FC<Props> = ({
             justifyContent: "center",
             alignItems: "center",
             marginHorizontal: 14,
-            backgroundColor: "#DB4437",
+            backgroundColor: theme.colors.google,
             shadowColor: theme.elevation.mid.shadowColor,
             shadowOffset: theme.elevation.mid.shadowOffset,
             shadowOpacity: theme.elevation.mid.shadowOpacity,
@@ -75,7 +75,7 @@ export const SocialButtons: React.FC<Props> = ({
             justifyContent: "center",
             alignItems: "center",
             marginHorizontal: 14,
-            backgroundColor: "#1877F2",
+            backgroundColor: theme.colors.facebook,
             shadowColor: theme.elevation.mid.shadowColor,
             shadowOffset: theme.elevation.mid.shadowOffset,
             shadowOpacity: theme.elevation.mid.shadowOpacity,
@@ -92,7 +92,11 @@ export const SocialButtons: React.FC<Props> = ({
         accessibilityHint="Öppnar Facebook-inloggning i nytt fönster"
         accessibilityRole="button"
       >
-        <FontAwesome name="facebook" size={26} color="#fff" />
+        <FontAwesome
+          name="facebook"
+          size={26}
+          color={theme.getContrastText(theme.colors.facebook)}
+        />
       </Pressable>
     </View>
   );

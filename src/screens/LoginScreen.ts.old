@@ -1,0 +1,176 @@
+
+export default LoginScreen;
+import * as WebBrowser from "expo-web-browser";
+import React from "react";
+import {
+  ActivityIndicator,
+  Keyboard,
+  Platform,
+  Pressable,
+  ScrollView,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { AuthHeader } from "../components/AuthHeader";
+import { Divider } from "../components/Divider";
+import { InputRow } from "../components/InputRow";
+import { SocialButtons } from "../components/SocialButtons";
+import { ToggleModeRow } from "../components/ToggleModeRow";
+import Gradient from "../components/ui/Gradient";
+import { ThemedView } from "../components/ui/ThemedView";
+import { useAuthForm } from "../hooks/useAuthForm";
+import { useSocialAuth } from "../hooks/useSocialAuth";
+import { useTheme } from "../hooks/useTheme";
+import { useLoginStyles } from "./login.styles";
+
+WebBrowser.maybeCompleteAuthSession();
+
+export const LoginScreen: React.FC = () => {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    mode,
+    setMode,
+    loading: formLoading,
+    error: formError,
+    isValid,
+    submit,
+  } = useAuthForm();
+
+  const {
+    startGoogle,
+    startFacebook,
+    loading: socialLoading,
+    error: socialError,
+  } = useSocialAuth();
+
+  const { theme } = useTheme();
+  const styles = useLoginStyles();
+
+  const loading = formLoading || socialLoading;
+  const error = formError ?? socialError;
+
+  return (
+    <ThemedView>
+      <Gradient variant="primary" style={styles.gradient} />
+      <View style={styles.bgCircleOne} />
+      <View style={styles.bgCircleTwo} />
+
+      <SafeAreaView style={styles.safeArea}>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            showsVerticalScrollIndicator={false}
+            keyboardShouldPersistTaps="handled"
+            keyboardDismissMode={
+              Platform.OS === "ios" ? "interactive" : "on-drag"
+            }
+            contentInsetAdjustmentBehavior="automatic"
+          >
+            <View style={styles.card}>
+              <AuthHeader
+                style={styles.header}
+                title="Hasse"
+                titleStyle={styles.logo}
+                subtitleStyle={styles.subtitle}
+              />
+
+              <View style={styles.inputContainer}>
+                <InputRow
+                  icon="envelope"
+                  placeholder="E-post"
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                  value={email}
+                  onChangeText={setEmail}
+                  accessibilityLabel="email-input"
+                  style={[styles.inputRow, styles.inputRowElevated]}
+                  iconStyle={styles.inputIcon}
+                  inputStyle={styles.input}
+                />
+
+                <InputRow
+                  icon="lock"
+                  placeholder="Lösenord"
+                  secureTextEntry
+                  value={password}
+                  onChangeText={setPassword}
+                  accessibilityLabel="password-input"
+                  style={[styles.inputRow, styles.inputRowElevated]}
+                  iconStyle={styles.inputIcon}
+                  inputStyle={styles.input}
+                />
+
+                {mode === "login" && (
+                  <Text
+                    style={styles.forgotPassword}
+                    onPress={() => console.log("Återställ")}
+                  >
+                    Glömt lösenord?
+                  </Text>
+                )}
+              </View>
+
+              {error ? <Text style={styles.errorText}>{error}</Text> : null}
+
+              <Pressable
+                style={({ pressed }) => [
+                  styles.button,
+                  !isValid && styles.buttonDisabled,
+                  pressed && styles.pressed,
+                ]}
+                onPress={submit}
+                disabled={loading || !isValid}
+                accessibilityRole="button"
+              >
+                {loading ? (
+                  <ActivityIndicator
+                    color={theme.getContrastText(theme.colors.primary)}
+                  />
+                ) : (
+                  <Text style={styles.buttonText}>
+                    {mode === "login" ? "Logga in" : "Skapa konto"}
+                  </Text>
+                )}
+              </Pressable>
+
+              <Divider
+                style={styles.divider}
+                lineStyle={styles.line}
+                textStyle={styles.dividerText}
+              />
+
+              <SocialButtons
+                onPressGoogle={startGoogle}
+                onPressFacebook={startFacebook}
+                disabled={loading}
+                style={styles.socialRow}
+                buttonStyle={styles.iconButtonLarge}
+                googleStyle={styles.googleIcon}
+                facebookStyle={styles.facebookIcon}
+              />
+
+              <ToggleModeRow
+                mode={mode}
+                onToggle={() => {
+                  setMode(mode === "login" ? "register" : "login");
+                }}
+                style={styles.row}
+                textStyle={styles.smallText}
+                linkStyle={styles.linkText}
+              />
+            </View>
+          </ScrollView>
+        </TouchableWithoutFeedback>
+      </SafeAreaView>
+    </ThemedView>
+  );
+};
+
+// Login screen entry
+export default LoginScreen;

@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "Svinnsmart-2Tsdnr",
-    "slug": "Svinnsmart-2Tsdnr",
+    "name": "Hasse-2Tsdnr",
+    "slug": "Hasse-2Tsdnr",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "svinnsmart-2tsdnr",
+    "scheme": "hasse-2tsdnr",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.falusvampen.appSvinnsmart2Tsdnr"
+      "bundleIdentifier": "com.falusvampen.appHasse2Tsdnr"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,7 +21,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.falusvampen.appSvinnsmart2Tsdnr"
+      "package": "com.falusvampen.appHasse2Tsdnr"
     },
     "web": {
       "output": "static",
