@@ -5,8 +5,6 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 // app/_layout.tsx
 
-// app/_layout.tsx
-
 function NavigationLayout() {
   const { user, isLoading } = useAuth();
 
