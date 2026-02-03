@@ -10,15 +10,15 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 
 // Komponenter
-import { LoginForm } from "../components/auth/LoginForm";
-import { LoginHeader } from "../components/auth/LoginHeader";
-import { Mascot } from "../components/auth/Mascot";
-import { ThemedView } from "../components/ui/ThemedView";
+import { LoginForm } from "@/components/auth/LoginForm";
+import { LoginHeader } from "@/components/auth/LoginHeader";
+import { Mascot } from "@/components/auth/Mascot";
+import { ThemedView } from "@/components/ui/ThemedView";
 
 // Hooks
-import { makeStyles } from "../hooks/makeStyles";
-import { useAuthForm } from "../hooks/useAuthForm";
-import { useSocialAuth } from "../hooks/useSocialAuth";
+import { makeStyles } from "@/hooks/makeStyles";
+import { useAuthForm } from "@/hooks/useAuthForm";
+import { useSocialAuth } from "@/hooks/useSocialAuth";
 
 // Assets
 
@@ -87,6 +87,8 @@ export const LoginScreen: React.FC = () => {
     </ThemedView>
   );
 };
+
+export default LoginScreen;
 
 const useStyles = makeStyles<{
   container: ViewStyle;
