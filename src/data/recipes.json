@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Green Pasta",
+    "subtitle": "With leftover veggies",
+    "image": "https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=800&auto=format&fit=crop",
+    "duration": "20 min",
+    "servings": 2,
+    "mode": "vertical",
+    "badge": "Veggie"
+  },
+  {
+    "id": "2",
+    "title": "Cozy Tomato Soup",
+    "subtitle": "Comfort in a bowl",
+    "image": "https://images.unsplash.com/photo-1512058564366-c9e3b1f0f6c7?q=80&w=800&auto=format&fit=crop",
+    "duration": "35 min",
+    "servings": 4,
+    "mode": "horizontal",
+    "badge": "Warm"
+  },
+  {
+    "id": "3",
+    "title": "Salad Bowl",
+    "subtitle": "Quick & fresh",
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop",
+    "duration": "10 min",
+    "servings": 1,
+    "mode": "square",
+    "badge": "Quick"
+  },
+  {
+    "id": "4",
+    "title": "Stir Fry Noodles",
+    "subtitle": "Use up fridge veggies",
+    "image": "https://images.unsplash.com/photo-1511689660979-6b7f7c9e7d52?q=80&w=800&auto=format&fit=crop",
+    "duration": "25 min",
+    "servings": 3,
+    "mode": "vertical"
+  },
+  {
+    "id": "5",
+    "title": "Chickpea Curry",
+    "subtitle": "Hearty & aromatic",
+    "image": "https://images.unsplash.com/photo-1543352634-4b2f07d8a1a9?q=80&w=800&auto=format&fit=crop",
+    "duration": "40 min",
+    "servings": 4,
+    "mode": "horizontal"
+  }
+]
