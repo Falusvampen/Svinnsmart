@@ -118,6 +118,10 @@ const useStyles = makeStyles((theme) => ({
   mascotWrapper: {
     // Här kan vi justera om Hasse ska "sticka upp" eller vara helt inom ramen
     justifyContent: "flex-end",
+    alignItems: "flex-end", // Placera Hasse helt till höger
+    // Se till att Hasse ligger över pratbubblan (speciellt Android där elevation påverkar ritordning)
+    zIndex: 2,
+    elevation: 4,
   },
   contentContainer: {
     marginTop: theme.spacing.xs,

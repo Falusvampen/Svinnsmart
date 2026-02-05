@@ -33,7 +33,7 @@ const RecipeSection: React.FC<Props> = ({
       {horizontal ? (
         <ScrollView
           horizontal
-          showsHorizontalScrollIndicator={false}
+          showsHorizontalScrollIndicator={true}
           contentContainerStyle={{ paddingRight: 12 }}
         >
           {children}

@@ -3,48 +3,124 @@
     "id": "1",
     "title": "Green Pasta",
     "subtitle": "With leftover veggies",
-    "image": "https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=800&auto=format&fit=crop",
-    "duration": "20 min",
+    "image": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=800",
+    "duration": 20,
     "servings": 2,
-    "mode": "vertical",
-    "badge": "Veggie"
+    "variant": "vertical",
+    "badge": "Veggie",
+    "tags": ["pasta", "vegetariskt", "snabbt"],
+    "ingredients": [
+      { "item": "Pasta", "amount": 200, "unit": "g", "category": "Skafferi" },
+      { "item": "Pesto", "amount": 1, "unit": "burk", "category": "Skafferi" },
+      { "item": "Spenat", "amount": 50, "unit": "g", "category": "Färskt" },
+      { "item": "Ärtor", "amount": 1, "unit": "dl", "category": "Frys" }
+    ]
   },
   {
     "id": "2",
     "title": "Cozy Tomato Soup",
-    "subtitle": "Comfort in a bowl",
-    "image": "https://images.unsplash.com/photo-1512058564366-c9e3b1f0f6c7?q=80&w=800&auto=format&fit=crop",
-    "duration": "35 min",
+    "subtitle": "Comfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowl",
+    "image": "https://images.unsplash.com/photo-1547592166-23acbe3a624b?q=80&w=800",
+    "duration": 35,
     "servings": 4,
-    "mode": "horizontal",
-    "badge": "Warm"
+    "variant": "horizontal",
+    "badge": "Warm",
+    "tags": ["soppa", "höst", "comfort"],
+    "ingredients": [
+      {
+        "item": "Krossade tomater",
+        "amount": 2,
+        "unit": "förp",
+        "category": "Skafferi"
+      },
+      { "item": "Lök", "amount": 1, "unit": "st", "category": "Färskt" },
+      {
+        "item": "Vitlök",
+        "amount": 2,
+        "unit": "klyftor",
+        "category": "Färskt"
+      },
+      { "item": "Grädde", "amount": 2, "unit": "dl", "category": "Kyl" }
+    ]
   },
   {
     "id": "3",
     "title": "Salad Bowl",
     "subtitle": "Quick & fresh",
-    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop",
-    "duration": "10 min",
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800",
+    "duration": 10,
     "servings": 1,
-    "mode": "square",
-    "badge": "Quick"
+    "variant": "square",
+    "badge": "Quick",
+    "tags": ["kallt", "lunch", "hälsa"],
+    "ingredients": [
+      {
+        "item": "Salladsmix",
+        "amount": 1,
+        "unit": "påse",
+        "category": "Färskt"
+      },
+      { "item": "Gurka", "amount": 0.5, "unit": "st", "category": "Färskt" },
+      {
+        "item": "Körsbärstomater",
+        "amount": 10,
+        "unit": "st",
+        "category": "Färskt"
+      },
+      { "item": "Fetaost", "amount": 1, "unit": "pkt", "category": "Kyl" }
+    ]
   },
   {
     "id": "4",
     "title": "Stir Fry Noodles",
     "subtitle": "Use up fridge veggies",
-    "image": "https://images.unsplash.com/photo-1511689660979-6b7f7c9e7d52?q=80&w=800&auto=format&fit=crop",
-    "duration": "25 min",
+    "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?q=80&w=800",
+    "duration": 25,
     "servings": 3,
-    "mode": "vertical"
+    "variant": "vertical",
+    "tags": ["wok", "asiatiskt", "kylrens"],
+    "ingredients": [
+      { "item": "Nudlar", "amount": 300, "unit": "g", "category": "Skafferi" },
+      { "item": "Sojasås", "amount": 3, "unit": "msk", "category": "Skafferi" },
+      { "item": "Morötter", "amount": 2, "unit": "st", "category": "Färskt" },
+      {
+        "item": "Broccoli",
+        "amount": 1,
+        "unit": "huvud",
+        "category": "Färskt"
+      },
+      { "item": "Tofu", "amount": 1, "unit": "pkt", "category": "Kyl" }
+    ]
   },
   {
     "id": "5",
     "title": "Chickpea Curry",
     "subtitle": "Hearty & aromatic",
-    "image": "https://images.unsplash.com/photo-1543352634-4b2f07d8a1a9?q=80&w=800&auto=format&fit=crop",
-    "duration": "40 min",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800",
+    "duration": 40,
     "servings": 4,
-    "mode": "horizontal"
+    "variant": "horizontal",
+    "tags": ["gryta", "veganskt", "mealprep"],
+    "ingredients": [
+      {
+        "item": "Kikärtor",
+        "amount": 2,
+        "unit": "förp",
+        "category": "Skafferi"
+      },
+      {
+        "item": "Kokosmjölk",
+        "amount": 1,
+        "unit": "burk",
+        "category": "Skafferi"
+      },
+      {
+        "item": "Currykrydda",
+        "amount": 1,
+        "unit": "msk",
+        "category": "Skafferi"
+      },
+      { "item": "Ris", "amount": 4, "unit": "port", "category": "Skafferi" }
+    ]
   }
 ]
