@@ -1,0 +1,373 @@
+{
+  "groups": [
+    {
+      "id": "meat",
+      "title": "Kött & Fisk",
+      "storage": "freezer",
+      "order": 0,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "frozenVeg",
+      "title": "Frysta grönsaker",
+      "storage": "freezer",
+      "order": 1,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+
+    {
+      "id": "dairy",
+      "title": "Mejeri & Ägg",
+      "storage": "fridge",
+      "order": 0,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "veg",
+      "title": "Frukt & Grönt",
+      "storage": "fridge",
+      "order": 1,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "condiments",
+      "title": "Kylskåpskryddor",
+      "storage": "fridge",
+      "order": 2,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+
+    {
+      "id": "dry",
+      "title": "Torrvaror",
+      "storage": "pantry",
+      "order": 0,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "canned",
+      "title": "Konserver",
+      "storage": "pantry",
+      "order": 1,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "baking",
+      "title": "Bakning",
+      "storage": "pantry",
+      "order": 2,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "spices",
+      "title": "Kryddor",
+      "storage": "pantry",
+      "order": 3,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "snacks",
+      "title": "Snacks",
+      "storage": "pantry",
+      "order": 4,
+      "createdAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "drinks",
+      "title": "Drycker",
+      "storage": "pantry",
+      "order": 5,
+      "createdAt": "2026-01-01T00:00:00Z"
+    }
+  ],
+
+  "items": [
+    {
+      "id": "fr1",
+      "name": "Laxfilé",
+      "amount": "4 bitar",
+      "expiryDate": "2026-08-01",
+      "storage": "freezer",
+      "groupId": "meat",
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "fr2",
+      "name": "Kycklingfilé",
+      "amount": "1 kg",
+      "expiryDate": "2026-12-01",
+      "storage": "freezer",
+      "groupId": "meat",
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "fr3",
+      "name": "Frysta ärtor",
+      "amount": "500 g",
+      "expiryDate": "2028-01-01",
+      "storage": "freezer",
+      "groupId": "frozenVeg",
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "fr4",
+      "name": "Frysta bär",
+      "amount": "400 g",
+      "expiryDate": "2027-06-01",
+      "storage": "freezer",
+      "groupId": "frozenVeg",
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-01-01T00:00:00Z"
+    },
+
+    {
+      "id": "f1",
+      "name": "Mellanmjölk",
+      "amount": "1 liter",
+      "expiryDate": "2026-02-12",
+      "storage": "fridge",
+      "groupId": "dairy",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+    {
+      "id": "f2",
+      "name": "Prästost",
+      "amount": "400 g",
+      "expiryDate": "2026-04-01",
+      "storage": "fridge",
+      "groupId": "dairy",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+    {
+      "id": "f3",
+      "name": "Ägg",
+      "amount": "6 st",
+      "expiryDate": "2026-02-15",
+      "storage": "fridge",
+      "groupId": "dairy",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+    {
+      "id": "f4",
+      "name": "Morötter",
+      "amount": "3 st",
+      "expiryDate": "2026-02-18",
+      "storage": "fridge",
+      "groupId": "veg",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+    {
+      "id": "f5",
+      "name": "Spenat",
+      "amount": "1/2 påse",
+      "expiryDate": "2026-02-11",
+      "storage": "fridge",
+      "groupId": "veg",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+    {
+      "id": "f6",
+      "name": "Smör",
+      "amount": "500 g",
+      "expiryDate": "2026-03-01",
+      "storage": "fridge",
+      "groupId": "condiments",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+    {
+      "id": "f7",
+      "name": "Yoghurt",
+      "amount": "2 st",
+      "expiryDate": "2026-02-09",
+      "storage": "fridge",
+      "groupId": "condiments",
+      "createdAt": "2026-01-02T00:00:00Z",
+      "updatedAt": "2026-01-02T00:00:00Z"
+    },
+
+    {
+      "id": "p1",
+      "name": "Pasta",
+      "amount": "500 g",
+      "expiryDate": "2028-05-01",
+      "storage": "pantry",
+      "groupId": "dry",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p2",
+      "name": "Ris",
+      "amount": "1 kg",
+      "expiryDate": "2029-01-01",
+      "storage": "pantry",
+      "groupId": "dry",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p3",
+      "name": "Quinoa",
+      "amount": "500 g",
+      "expiryDate": "2027-10-01",
+      "storage": "pantry",
+      "groupId": "dry",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p4",
+      "name": "Torkade bönor",
+      "amount": "400 g",
+      "expiryDate": "2026-07-01",
+      "storage": "pantry",
+      "groupId": "dry",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+
+    {
+      "id": "p5",
+      "name": "Krossade tomater",
+      "amount": "400 g",
+      "expiryDate": "2028-06-15",
+      "storage": "pantry",
+      "groupId": "canned",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p6",
+      "name": "Kikärtor",
+      "amount": "400 g",
+      "expiryDate": "2028-06-15",
+      "storage": "pantry",
+      "groupId": "canned",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p7",
+      "name": "Tonfisk",
+      "amount": "185 g",
+      "expiryDate": "2027-01-20",
+      "storage": "pantry",
+      "groupId": "canned",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+
+    {
+      "id": "p8",
+      "name": "Vetemjöl",
+      "amount": "2 kg",
+      "expiryDate": "2026-12-01",
+      "storage": "pantry",
+      "groupId": "baking",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p9",
+      "name": "Strösocker",
+      "amount": "1 kg",
+      "expiryDate": "2030-12-01",
+      "storage": "pantry",
+      "groupId": "baking",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p10",
+      "name": "Bakpulver",
+      "amount": "1 paket",
+      "expiryDate": "2026-08-01",
+      "storage": "pantry",
+      "groupId": "baking",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+
+    {
+      "id": "p11",
+      "name": "Salt",
+      "amount": "500 g",
+      "expiryDate": "2030-01-01",
+      "storage": "pantry",
+      "groupId": "spices",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p12",
+      "name": "Svartpeppar",
+      "amount": "50 g",
+      "expiryDate": "2029-05-01",
+      "storage": "pantry",
+      "groupId": "spices",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p13",
+      "name": "Paprikapulver",
+      "amount": "40 g",
+      "expiryDate": "2028-09-01",
+      "storage": "pantry",
+      "groupId": "spices",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+
+    {
+      "id": "p14",
+      "name": "Chips",
+      "amount": "200 g",
+      "expiryDate": "2026-02-20",
+      "storage": "pantry",
+      "groupId": "snacks",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p15",
+      "name": "Nötter",
+      "amount": "150 g",
+      "expiryDate": "2026-03-01",
+      "storage": "pantry",
+      "groupId": "snacks",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+
+    {
+      "id": "p16",
+      "name": "Kaffe",
+      "amount": "500 g",
+      "expiryDate": "2027-11-01",
+      "storage": "pantry",
+      "groupId": "drinks",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    },
+    {
+      "id": "p17",
+      "name": "Te",
+      "amount": "50 påsar",
+      "expiryDate": "2028-04-01",
+      "storage": "pantry",
+      "groupId": "drinks",
+      "createdAt": "2026-01-03T00:00:00Z",
+      "updatedAt": "2026-01-03T00:00:00Z"
+    }
+  ]
+}
