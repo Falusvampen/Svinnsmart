@@ -1,0 +1,38 @@
+[
+  {
+    "id": "meat",
+    "title": "Kött & Fisk",
+    "items": [
+      {
+        "id": "fr1",
+        "name": "Laxfilé",
+        "amount": "4 bitar",
+        "expiryDate": "2026-08-01"
+      },
+      {
+        "id": "fr2",
+        "name": "Kycklingfilé",
+        "amount": "1 kg",
+        "expiryDate": "2026-12-01"
+      }
+    ]
+  },
+  {
+    "id": "frozenVeg",
+    "title": "Frysta grönsaker",
+    "items": [
+      {
+        "id": "fr3",
+        "name": "Frysta ärtor",
+        "amount": "500 g",
+        "expiryDate": "2028-01-01"
+      },
+      {
+        "id": "fr4",
+        "name": "Frysta bär",
+        "amount": "400 g",
+        "expiryDate": "2027-06-01"
+      }
+    ]
+  }
+]

@@ -1,5 +1,9 @@
 // src/models/inventory.ts (eller internt i filen)
 
+import freezerData from "@/data/freezer.json";
+import fridgeData from "@/data/fridge.json";
+import pantryData from "@/data/pantry.json";
+
 export type StorageType = "fridge" | "freezer" | "pantry";
 
 export interface Ingredient {
@@ -16,37 +20,7 @@ export interface CategoryGroup {
 }
 
 export const MOCK_DATA: Record<StorageType, CategoryGroup[]> = {
-  fridge: [
-    {
-      id: "dairy",
-      title: "Mejeri & Ägg",
-      items: [
-        { id: "1", name: "Mellanmjölk", amount: "1 liter" },
-        { id: "2", name: "Prästost", amount: "400g" },
-        { id: "3", name: "Ägg", amount: "6 st" },
-      ],
-    },
-    {
-      id: "veg",
-      title: "Frukt & Grönt",
-      items: [
-        { id: "4", name: "Morötter", amount: "3 st" },
-        { id: "5", name: "Spenat", amount: "1/2 påse" },
-      ],
-    },
-  ],
-  freezer: [
-    {
-      id: "meat",
-      title: "Kött & Fisk",
-      items: [{ id: "6", name: "Laxfilé", amount: "4 bitar" }],
-    },
-  ],
-  pantry: [
-    {
-      id: "dry",
-      title: "Torrvaror",
-      items: [{ id: "7", name: "Pasta", amount: "500g" }],
-    },
-  ],
+  fridge: fridgeData as CategoryGroup[],
+  freezer: freezerData as CategoryGroup[],
+  pantry: pantryData as CategoryGroup[],
 };
