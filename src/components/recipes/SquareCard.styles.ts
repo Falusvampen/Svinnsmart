@@ -1,74 +1,91 @@
 import { AppTheme } from "@/constants/theme";
-import { StyleSheet } from "react-native";
-import { createStyles as createBaseStyles } from "./RecipeCard.styles";
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from "react-native";
 
-export const createSquareStyles = (theme: AppTheme) => {
-  const base = createBaseStyles(theme) as any;
+type SquareCardStyles = {
+  cardContainer: ViewStyle;
+  cardContainerSquare: ViewStyle;
+  imageWrapper: ViewStyle;
+  image: ImageStyle;
+  imageSquare: ImageStyle;
+  contentSquare: ViewStyle;
+  title: TextStyle;
+  compactMetaRow: ViewStyle;
+  compactMetaItem: ViewStyle;
+  compactMetaText: TextStyle;
+  compactDot: ViewStyle;
+  subtitle: TextStyle;
+};
+
+export const createSquareStyles = (theme: AppTheme): SquareCardStyles => {
+  const colors = theme.colors;
 
   return StyleSheet.create({
-    ...base,
+    // --- CONTAINER ---
+    cardContainer: {
+      backgroundColor: "transparent",
+    },
     cardContainerSquare: {
-      aspectRatio: 0.85,
+      width: "100%",
+      marginBottom: theme.spacing.md,
     },
 
-    // Bilden täcker allt
+    // --- BILD (Kvadratisk) ---
     imageWrapper: {
-      ...base.imageWrapper,
+      width: "100%",
+      aspectRatio: 1,
+      borderRadius: theme.radius.md,
+      overflow: "hidden",
+      position: "relative",
+      backgroundColor: colors.muted,
+      ...theme.elevation.low,
+    },
+    image: {
+      width: "100%",
       height: "100%",
     },
     imageSquare: {
-      height: "100%",
+      resizeMode: "cover",
     },
 
-    // Flytande etikett
+    // --- INNEHÅLL ---
     contentSquare: {
-      position: "absolute",
-      bottom: 8,
-      left: 8,
-      right: 8,
-      backgroundColor: theme.colors.surface,
-      borderRadius: theme.radius.md,
-      paddingVertical: 6,
-      paddingHorizontal: 8,
-      // Skugga
-      shadowColor: "#000",
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.15,
-      shadowRadius: 4,
-      elevation: 3,
-      justifyContent: "center",
+      marginTop: theme.spacing.sm,
+      paddingHorizontal: theme.spacing.xs,
     },
-
-    // Titel
     title: {
-      ...base.title,
-      fontSize: theme.typography.fontSizes.sm, // Lite mindre för att få plats
-      marginBottom: 2,
+      fontSize: theme.typography.fontSizes.sm,
+      fontWeight: theme.typography.fontWeights.bold as any,
+      color: colors.text,
+      marginBottom: theme.spacing.xs,
+    },
+    subtitle: {
+      fontSize: theme.typography.fontSizes.xs,
+      color: colors.textMuted,
     },
 
-    // --- NYA KOMPAKTA STILAR ---
+    // --- KOMPAKT META INFO (Ikoner + Text) ---
     compactMetaRow: {
       flexDirection: "row",
       alignItems: "center",
-      // justifyContent: "space-between", // Alternativt "flex-start" om du vill ha dem till vänster
+      marginTop: theme.spacing.xs,
     },
     compactMetaItem: {
       flexDirection: "row",
       alignItems: "center",
-      gap: 2, // Litet avstånd mellan ikon och siffra
+      gap: 4,
     },
     compactMetaText: {
-      fontSize: theme.typography.fontSizes.xs, // Liten text
-      color: theme.colors.textMuted,
-      fontWeight: theme.typography.fontWeights.medium,
+      fontSize: theme.typography.fontSizes.xs,
+      fontWeight: theme.typography.fontWeights.medium as any,
+      color: colors.textMuted,
+      marginLeft: 2,
     },
     compactDot: {
-      width: 2,
-      height: 2,
-      borderRadius: 1,
-      backgroundColor: theme.colors.textMuted,
-      marginHorizontal: theme.spacing.sm, // Avstånd mellan grupperna
-      opacity: 0.5,
+      width: 3,
+      height: 3,
+      borderRadius: 1.5,
+      backgroundColor: colors.border,
+      marginHorizontal: theme.spacing.sm,
     },
   });
 };

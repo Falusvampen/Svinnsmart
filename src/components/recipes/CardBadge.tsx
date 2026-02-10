@@ -12,9 +12,16 @@ const CardBadge = ({ badge }: { badge?: string }) => {
   const isCookable = badge === "Kan lagas!";
   const badgeStyle = [
     styles.badge,
-    isCookable && { backgroundColor: theme.colors.success },
+    {
+      backgroundColor: isCookable ? theme.colors.success : theme.colors.surface,
+    },
   ];
-  const textStyle = [styles.badgeText, isCookable && { color: "#FFF" }];
+
+  const textColor = isCookable
+    ? theme.getContrastText(theme.colors.success)
+    : theme.colors.accent;
+
+  const textStyle = [styles.badgeText, { color: textColor }];
 
   return (
     <View style={badgeStyle}>

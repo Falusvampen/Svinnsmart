@@ -19,7 +19,7 @@
   {
     "id": "2",
     "title": "Cozy Tomato Soup",
-    "subtitle": "Comfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowlComfort in a bowl",
+    "subtitle": "Comfort in a bowl",
     "image": "https://images.unsplash.com/photo-1547592166-23acbe3a624b?q=80&w=800",
     "duration": 35,
     "servings": 4,
@@ -121,6 +121,246 @@
         "category": "Skafferi"
       },
       { "item": "Ris", "amount": 4, "unit": "port", "category": "Skafferi" }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Sheet Pan Salmon",
+    "subtitle": "Roasted salmon with potatoes and lemon",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800",
+    "duration": 25,
+    "servings": 2,
+    "variant": "vertical",
+    "badge": "Protein",
+    "tags": ["lax", "snabbt", "ugn"],
+    "ingredients": [
+      { "item": "Laxfiléer", "amount": 2, "unit": "st", "category": "Kyl" },
+      { "item": "Potatis", "amount": 400, "unit": "g", "category": "Färskt" },
+      { "item": "Citron", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Dill", "amount": 1, "unit": "kruka", "category": "Färskt" },
+      { "item": "Olivolja", "amount": 2, "unit": "msk", "category": "Skafferi" }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Vegetable Frittata",
+    "subtitle": "Egg-based bake for breakfast or dinner",
+    "image": "https://images.unsplash.com/photo-1511689660979-354d3c1d0b8b?q=80&w=800",
+    "duration": 20,
+    "servings": 2,
+    "variant": "square",
+    "badge": "Breakfast",
+    "tags": ["frukost", "ägg", "snabbt"],
+    "ingredients": [
+      { "item": "Ägg", "amount": 6, "unit": "st", "category": "Kyl" },
+      { "item": "Mjölk", "amount": 1, "unit": "dl", "category": "Kyl" },
+      { "item": "Paprika", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Lök", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Riven ost", "amount": 50, "unit": "g", "category": "Kyl" }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Leftover Fried Rice",
+    "subtitle": "Quick stir-fry using leftover rice",
+    "image": "https://images.unsplash.com/photo-1604908177522-42a5b0df5ae1?q=80&w=800",
+    "duration": 15,
+    "servings": 2,
+    "variant": "horizontal",
+    "tags": ["snabbt", "wok", "rest"],
+    "ingredients": [
+      { "item": "Kokt ris", "amount": 3, "unit": "dl", "category": "Kyl" },
+      { "item": "Ägg", "amount": 2, "unit": "st", "category": "Kyl" },
+      { "item": "Ärtor", "amount": 1, "unit": "dl", "category": "Frys" },
+      { "item": "Morot", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Sojasås", "amount": 2, "unit": "msk", "category": "Skafferi" }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Beef & Bean Chili",
+    "subtitle": "Slow-cooked spicy chili",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800",
+    "duration": 60,
+    "servings": 6,
+    "variant": "horizontal",
+    "badge": "Comfort",
+    "tags": ["gryta", "kryddig", "mattigt"],
+    "ingredients": [
+      { "item": "Köttfärs", "amount": 500, "unit": "g", "category": "Kyl" },
+      {
+        "item": "Kidneybönor",
+        "amount": 2,
+        "unit": "förp",
+        "category": "Skafferi"
+      },
+      {
+        "item": "Krossade tomater",
+        "amount": 2,
+        "unit": "förp",
+        "category": "Skafferi"
+      },
+      { "item": "Lök", "amount": 1, "unit": "st", "category": "Färskt" },
+      {
+        "item": "Chilipulver",
+        "amount": 1,
+        "unit": "msk",
+        "category": "Skafferi"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Lentil Bolognese",
+    "subtitle": "Hearty vegan pasta sauce",
+    "image": "https://images.unsplash.com/photo-1604908177527-7f1f2f3c3f0a?q=80&w=800",
+    "duration": 45,
+    "servings": 4,
+    "variant": "vertical",
+    "badge": "Veggie",
+    "tags": ["pasta", "veganskt", "linser"],
+    "ingredients": [
+      {
+        "item": "Röda linser",
+        "amount": 2,
+        "unit": "dl",
+        "category": "Skafferi"
+      },
+      {
+        "item": "Krossade tomater",
+        "amount": 2,
+        "unit": "förp",
+        "category": "Skafferi"
+      },
+      { "item": "Lök", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Morot", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Pasta", "amount": 400, "unit": "g", "category": "Skafferi" }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "Mushroom Toast",
+    "subtitle": "Sautéed mushrooms on crusty bread",
+    "image": "https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=800",
+    "duration": 10,
+    "servings": 1,
+    "variant": "square",
+    "tags": ["snabbt", "smörgås", "vegetariskt"],
+    "ingredients": [
+      {
+        "item": "Brödskivor",
+        "amount": 2,
+        "unit": "st",
+        "category": "Skafferi"
+      },
+      {
+        "item": "Champinjoner",
+        "amount": 150,
+        "unit": "g",
+        "category": "Färskt"
+      },
+      { "item": "Vitlök", "amount": 1, "unit": "klyfta", "category": "Färskt" },
+      { "item": "Smör", "amount": 1, "unit": "msk", "category": "Kyl" },
+      { "item": "Persilja", "amount": 1, "unit": "kruka", "category": "Färskt" }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Sweet Potato & Black Bean Tacos",
+    "subtitle": "Spiced sweet potato tacos with avocado",
+    "image": "https://images.unsplash.com/photo-1552332386-f8dd00dc0d8b?q=80&w=800",
+    "duration": 30,
+    "servings": 4,
+    "variant": "vertical",
+    "tags": ["tacos", "veganskt", "streetfood"],
+    "ingredients": [
+      {
+        "item": "Sötpotatis",
+        "amount": 500,
+        "unit": "g",
+        "category": "Färskt"
+      },
+      {
+        "item": "Svarta bönor",
+        "amount": 2,
+        "unit": "förp",
+        "category": "Skafferi"
+      },
+      {
+        "item": "Tortillabröd",
+        "amount": 8,
+        "unit": "st",
+        "category": "Skafferi"
+      },
+      { "item": "Avokado", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Lime", "amount": 1, "unit": "st", "category": "Färskt" }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Creamy Chicken Rice",
+    "subtitle": "Comforting chicken and mushroom risotto-like dish",
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800",
+    "duration": 40,
+    "servings": 4,
+    "variant": "horizontal",
+    "tags": ["kyckling", "ris", "comfort"],
+    "ingredients": [
+      {
+        "item": "Kycklingfiléer",
+        "amount": 400,
+        "unit": "g",
+        "category": "Kyl"
+      },
+      { "item": "Grädde", "amount": 2, "unit": "dl", "category": "Kyl" },
+      { "item": "Ris", "amount": 3, "unit": "dl", "category": "Skafferi" },
+      { "item": "Svamp", "amount": 200, "unit": "g", "category": "Färskt" },
+      { "item": "Lök", "amount": 1, "unit": "st", "category": "Färskt" }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "Pancakes with Berry Compote",
+    "subtitle": "Fluffy pancakes and quick berry compote",
+    "image": "https://images.unsplash.com/photo-1543936593-9c3f9f6e2c2b?q=80&w=800",
+    "duration": 25,
+    "servings": 4,
+    "variant": "vertical",
+    "badge": "Treat",
+    "tags": ["frukost", "söt", "dessert"],
+    "ingredients": [
+      { "item": "Mjöl", "amount": 3, "unit": "dl", "category": "Skafferi" },
+      { "item": "Mjölk", "amount": 2, "unit": "dl", "category": "Kyl" },
+      { "item": "Ägg", "amount": 2, "unit": "st", "category": "Kyl" },
+      {
+        "item": "Blandade bär",
+        "amount": 200,
+        "unit": "g",
+        "category": "Frys"
+      },
+      {
+        "item": "Lönnsirap",
+        "amount": 2,
+        "unit": "msk",
+        "category": "Skafferi"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "Roasted Veggie Quinoa Bowl",
+    "subtitle": "Oven-roasted vegetables with quinoa and feta",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800",
+    "duration": 35,
+    "servings": 2,
+    "variant": "square",
+    "tags": ["quinoa", "hälsa", "mealprep"],
+    "ingredients": [
+      { "item": "Quinoa", "amount": 1, "unit": "dl", "category": "Skafferi" },
+      { "item": "Paprika", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Zucchini", "amount": 1, "unit": "st", "category": "Färskt" },
+      { "item": "Fetaost", "amount": 1, "unit": "pkt", "category": "Kyl" },
+      { "item": "Olivolja", "amount": 2, "unit": "msk", "category": "Skafferi" }
     ]
   }
 ]
