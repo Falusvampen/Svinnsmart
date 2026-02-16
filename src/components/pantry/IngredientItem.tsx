@@ -85,20 +85,20 @@ export const IngredientItem: React.FC<Props> = ({ item, onPress }) => {
         // Visa antal hela förpackningar när sådana finns, annars öppnad mängd
         if ((it.unopenedQuantity ?? 0) > 0)
           return `${it.unopenedQuantity} ${unit}`;
-        return `${it.currentVolume ?? it.packageSize ?? 0} ${unit}`;
+        return `${it.openedVolume ?? it.packageSize ?? 0} ${unit}`;
       }
 
       case "volume": {
         // Visa öppnad förpackningsstatus om packageSize finns, annars total volym
         if (
           typeof it.packageSize === "number" &&
-          typeof it.currentVolume === "number"
+          typeof it.openedVolume === "number"
         ) {
-          return `${it.currentVolume}/${it.packageSize} ${unit}`;
+          return `${it.openedVolume}/${it.packageSize} ${unit}`;
         }
         const total =
           (it.unopenedQuantity ?? 0) * (it.packageSize ?? 0) +
-          (it.currentVolume ?? 0);
+          (it.openedVolume ?? 0);
         return `${total} ${unit}`;
       }
 

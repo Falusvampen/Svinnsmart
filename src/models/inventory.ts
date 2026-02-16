@@ -47,7 +47,8 @@ export interface InventoryItem extends BaseIngredient {
   packageUnit: Unit; // Den enhet som används för beräkning (t.ex. "ml" eller "st")
 
   unopenedQuantity: number; // Antal hela förpackningar (t.ex. 2 st mjölk eller två paket pasta)
-  currentVolume: number; // Innehåll i den öppnade förpackningen (t.ex. 500 ml)
+  openedQuantity?: number; // Mängd i den öppnade förpackningen (t.ex. 500 ml mjölk kvar i en literförpackning)
+  openedVolume: number; // Innehåll i den öppnade förpackningen (t.ex. 500 ml)
   packageSize: number; // Storlek per förpackning (t.ex. 1 för en liter)
 
   status: "full" | "high" | "half" | "low" | "empty";
