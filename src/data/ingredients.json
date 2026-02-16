@@ -1,0 +1,78 @@
+{
+  "Name": "Mjölk fett 3% berikad",
+  "Id": 123,
+  "Group": "Mejeri",
+  "Energy": {
+    "Energi (kcal)": 60,
+    "Energi (kJ)": 250
+  },
+  "Carbohydrates": {
+    "Kolhydrater, tillgängliga (g)": 4.6,
+    "Fibrer (g)": 0,
+    "Sockerarter, totalt (g)": 4.6,
+    "Monosackarider (g)": 0,
+    "Disackarider (g)": 4.6,
+    "Tillsatt socker (g)": 0,
+    "Fritt socker (g)": 0,
+    "Fullkorn totalt (g)": 0
+  },
+  "Fat": {
+    "Fett, totalt (g)": 3,
+    "Summa mättade fettsyror (g)": 1.9,
+    "Fettsyra 4:0-10:0 (g)": 0.3,
+    "Laurinsyra C12:0 (g)": 0.1,
+    "Myristinsyra C14:0 (g)": 0.3,
+    "Palmitinsyra C16:0 (g)": 0.9,
+    "Stearinsyra C18:0 (g)": 0.3,
+    "Arakidinsyra C20:0 (g)": 0,
+    "Summa enkelomättade fettsyror (g)": 0.7,
+    "Palmitoljesyra C16:1 (g)": 0.1,
+    "Oljesyra C18:1 (g)": 0.6,
+    "Summa fleromättade fettsyror (g)": 0.1,
+    "Linolsyra C18:2 (g)": 0.1,
+    "Linolensyra C18:3 (g)": 0,
+    "Arakidonsyra C20:4 (g)": 0,
+    "EPA (C20:5) (g)": 0,
+    "DPA (C22:5) (g)": 0,
+    "DHA (C22:6) (g)": 0,
+    "Kolesterol (mg)": 11.3
+  },
+  "Protein": {
+    "Protein (g)": 3.6
+  },
+  "Vitamins": {
+    "Vitamin A (RE/µg)": 26.5,
+    "Retinol (µg)": 25,
+    "Betakaroten/β-Karoten (µg)": 18,
+    "Vitamin D (µg)": 1,
+    "Vitamin D inkl 25-OH-D3 (µg)": 1,
+    "Vitamin E (mg)": 0.1,
+    "Vitamin K (µg)": 0.9,
+    "Tiamin (mg)": 0.04,
+    "Riboflavin (mg)": 0.14,
+    "Niacin (mg)": 0.11,
+    "Niacinekvivalenter (NE/mg)": 0.9,
+    "Vitamin B6 (mg)": 0.05,
+    "Folat, totalt (µg)": 8.8,
+    "Vitamin B12 (µg)": 0.44,
+    "Vitamin C (mg)": 0.6
+  },
+  "Minerals": {
+    "Fosfor, P (mg)": 138,
+    "Jod, I (µg)": 22,
+    "Järn, Fe (mg)": 0,
+    "Kalcium, Ca (mg)": 123,
+    "Kalium, K (mg)": 158,
+    "Magnesium, Mg (mg)": 11,
+    "Natrium, Na (mg)": 34,
+    "Salt, NaCl (g)": 0.1,
+    "Selen, Se (µg)": 1.7,
+    "Zink, Zn (mg)": 0.3
+  },
+  "Other": {
+    "Vatten (g)": 88.1,
+    "Alkohol (g)": 0,
+    "Aska (g)": 0.7,
+    "Avfall (skal etc.) (%)": 0
+  }
+}

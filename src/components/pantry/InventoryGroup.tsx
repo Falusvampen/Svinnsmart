@@ -1,7 +1,7 @@
 import { IngredientItem } from "@/components/pantry/IngredientItem";
 import { makeStyles } from "@/hooks/makeStyles";
 import { useTheme } from "@/hooks/useTheme";
-import { CategoryGroup } from "@/models/inventory";
+import { CategoryGroup } from "@/models/";
 import React from "react";
 import { Text, View } from "react-native";
 
@@ -72,7 +72,7 @@ export const InventoryGroup: React.FC<Props> = ({ group }) => {
         ]}
       >
         {group.items.map((item) => (
-          <IngredientItem key={item.id} item={item} />
+          <IngredientItem key={item.inventoryId} item={item} />
         ))}
       </View>
     </View>

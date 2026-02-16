@@ -4,7 +4,7 @@ import { InventoryHeader } from "@/components/pantry/InventoryHeader";
 import { StorageSelector } from "@/components/pantry/StorageSelector";
 import { ThemedView } from "@/components/ui/ThemedView";
 import { makeStyles } from "@/hooks/makeStyles";
-import { MOCK_DATA, StorageType } from "@/models/inventory";
+import { MOCK_DATA, StorageType } from "@/models/";
 import React, { useState } from "react";
 import { ScrollView, View } from "react-native";
 

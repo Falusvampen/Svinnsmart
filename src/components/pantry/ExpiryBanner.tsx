@@ -1,7 +1,7 @@
 import { makeStyles } from "@/hooks/makeStyles";
 import { useTheme } from "@/hooks/useTheme";
-import { CategoryGroup } from "@/models/inventory";
-import { daysUntil } from "@/utils/date";
+import { CategoryGroup } from "@/models/";
+import { daysUntil, getItemExpiryDate } from "@/utils/date";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -56,17 +56,20 @@ export const ExpiryBanner: React.FC<Props> = ({
   const styles = useStyles();
   const { theme } = useTheme();
 
-  // Platta ut items och filtrera de som har expiryDate
-  const items = groups.flatMap((g) => g.items).filter((i) => !!i.expiryDate);
+  // Platta ut items och derivera expiry via shelfLifeDays + addedAt
+  const expiries = groups
+    .flatMap((g) => g.items)
+    .map((i) => getItemExpiryDate(i))
+    .filter((d): d is string => !!d);
 
-  const expired = items.filter((i) => daysUntil(i.expiryDate!) < 0).length;
-  const urgent = items.filter((i) => {
-    const d = daysUntil(i.expiryDate!);
-    return d >= 0 && d <= 3;
+  const expired = expiries.filter((d) => daysUntil(d) < 0).length;
+  const urgent = expiries.filter((d) => {
+    const days = daysUntil(d);
+    return days >= 0 && days <= 3;
   }).length;
-  const withinAlert = items.filter((i) => {
-    const d = daysUntil(i.expiryDate!);
-    return d >= 0 && d <= alertDays;
+  const withinAlert = expiries.filter((d) => {
+    const days = daysUntil(d);
+    return days >= 0 && days <= alertDays;
   }).length;
 
   // Best message priority: expired > urgent > withinAlert > none

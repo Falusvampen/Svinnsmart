@@ -1,14 +1,14 @@
 import { makeStyles } from "@/hooks/makeStyles";
 import { useTheme } from "@/hooks/useTheme";
-import { Ingredient } from "@/models/inventory";
-import { getExpiryInfo } from "@/utils/date";
+import { InventoryItem } from "@/models/inventory";
+import { getExpiryInfo, getItemExpiryDate } from "@/utils/date";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 type Props = {
-  item: Ingredient;
-  onPress?: (id: string) => void;
+  item: InventoryItem;
+  onPress?: (inventoryId: string) => void;
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -53,7 +53,8 @@ export const IngredientItem: React.FC<Props> = ({ item, onPress }) => {
   const { theme } = useTheme();
 
   // Lokala helpers för expiry-status
-  const expiry = item.expiryDate;
+  // Deriverat expiry (nytt datamodell): använd shelfLifeDays + addedAt om möjligt
+  const expiry = getItemExpiryDate(item);
   let expiryLabel: string | null = null;
   let expiryColor: string | null = null;
 
@@ -75,6 +76,38 @@ export const IngredientItem: React.FC<Props> = ({ item, onPress }) => {
     }
   }
 
+  // Formatera mängd baserat på nya InventoryItem-fälten
+  const formatAmount = (it: InventoryItem) => {
+    const unit = it.displayUnit ?? it.packageUnit ?? "st";
+
+    switch (it.uiType) {
+      case "count": {
+        // Visa antal hela förpackningar när sådana finns, annars öppnad mängd
+        if ((it.unopenedQuantity ?? 0) > 0)
+          return `${it.unopenedQuantity} ${unit}`;
+        return `${it.currentVolume ?? it.packageSize ?? 0} ${unit}`;
+      }
+
+      case "volume": {
+        // Visa öppnad förpackningsstatus om packageSize finns, annars total volym
+        if (
+          typeof it.packageSize === "number" &&
+          typeof it.currentVolume === "number"
+        ) {
+          return `${it.currentVolume}/${it.packageSize} ${unit}`;
+        }
+        const total =
+          (it.unopenedQuantity ?? 0) * (it.packageSize ?? 0) +
+          (it.currentVolume ?? 0);
+        return `${total} ${unit}`;
+      }
+
+      case "binary":
+      default:
+        return it.isAvailable ? "Finns" : "Slut";
+    }
+  };
+
   return (
     <View
       style={[
@@ -90,7 +123,7 @@ export const IngredientItem: React.FC<Props> = ({ item, onPress }) => {
           {item.name}
         </Text>
         <Text style={[styles.amount, { color: theme.colors.textMuted }]}>
-          {item.amount}
+          {formatAmount(item)}
         </Text>
         {expiryLabel ? (
           <View style={styles.expiryRow}>
@@ -112,7 +145,7 @@ export const IngredientItem: React.FC<Props> = ({ item, onPress }) => {
         ) : null}
       </View>
       <TouchableOpacity
-        onPress={() => onPress?.(item.id)}
+        onPress={() => onPress?.(item.inventoryId)}
         style={{ padding: 4 }}
       >
         <Ionicons

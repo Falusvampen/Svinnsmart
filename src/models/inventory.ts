@@ -1,87 +1,66 @@
 // src/models/inventory.ts
+import { LdbIngredient } from "./ldbIngredient";
 
-import rawInventory from "@/data/inventory.json";
-
+// --- New domain model (matches your spec) ---
 export type StorageType = "fridge" | "freezer" | "pantry";
+// volume = ml/l and fuzzy logic for status (full/high/half/low/empty)
+// count = st/pkg/burk and status based on quantity vs packageSize
+// binary = st/pkg/burk and status is just full (quantity > 0) or empty (quantity = 0)
+export type UIType = "volume" | "count" | "binary";
+export type Category =
+  | "Dairy & Eggs"
+  | "Meat, Fish & Poultry"
+  | "Fruit & Vegetables"
+  | "Bread & Bakery"
+  | "Pantry & Dry Goods"
+  | "Frozen"
+  | "Flavoring & Baking"
+  | "Drinks & Snacks";
 
-export interface Ingredient {
-  id: string;
-  name: string;
-  amount: string;
-  expiryDate?: string; // För "Svinnsmart"-funktionen senare
-  storage: StorageType; // vilket lager (fridge/freezer/pantry) varan tillhör
-  groupId?: string; // optional link to a CategoryGroup
-  createdAt?: string;
-  updatedAt?: string;
+export type BaseIngredient = {
+  id?: string;
+  name?: string;
+  nameEn?: string;
+  mainCategory?: Category;
+  storage?: StorageType;
+  uiType?: UIType;
+  shelfLifeDays?: number; // Standard bäst före-tid i dagar (för nya varor utan expiryDate)
+  ldb?: LdbIngredient;
+};
+
+export type Unit =
+  | "g"
+  | "kg"
+  | "ml"
+  | "cl"
+  | "dl"
+  | "l"
+  | "st"
+  | "pkg"
+  | "burk";
+
+export interface InventoryItem extends BaseIngredient {
+  inventoryId: string;
+
+  // Logik för enheter
+  displayUnit: Unit; // Den enhet som visas i UI just nu (t.ex. "l" eller "st")
+  packageUnit: Unit; // Den enhet som används för beräkning (t.ex. "ml" eller "st")
+
+  unopenedQuantity: number; // Antal hela förpackningar (t.ex. 2 st mjölk eller två paket pasta)
+  currentVolume: number; // Innehåll i den öppnade förpackningen (t.ex. 500 ml)
+  packageSize: number; // Storlek per förpackning (t.ex. 1 för en liter)
+
+  status: "full" | "high" | "half" | "low" | "empty";
+  isAvailable: boolean;
+  addedAt: string;
 }
 
+// Grupp-typ som representerar en samling ingredienser i ett lager (t.ex. "Mejeri" i kylskåpet).
+// `storage` anger vilket lager (fridge/freezer/pantry) gruppen tillhör och används
+// för att visa rätt flik i UI.
 export interface CategoryGroup {
   id: string;
   title: string;
-  storage: StorageType; // "fridge" | "freezer" | "pantry"
-  order?: number;
-  createdAt?: string;
-  items: Ingredient[];
+  storage?: StorageType;
+  items: InventoryItem[];
 }
-
-type RawInventoryShape = {
-  groups: {
-    id: string;
-    title: string;
-    storage: StorageType;
-    order?: number;
-    createdAt?: string;
-  }[];
-  items: Ingredient[];
-};
-
-const inventoryData = rawInventory as unknown as RawInventoryShape;
-
-// All items (flat) — useful for services/testing/migrations
-export const ALL_ITEMS: Ingredient[] = inventoryData.items || [];
-
-// Build groups and attach items by groupId — mirrors the structure the UI consumes
-export const ALL_GROUPS: CategoryGroup[] = (inventoryData.groups || []).map(
-  (g) => ({
-    id: g.id,
-    title: g.title,
-    storage: g.storage,
-    order: g.order,
-    createdAt: g.createdAt,
-    items: ALL_ITEMS.filter((it) => it.groupId === g.id),
-  }),
-);
-
-// Any items without a group get an "Övrigt" group per storage so UI keeps working
-const orphanedByStorage: Record<StorageType, Ingredient[]> = {
-  fridge: ALL_ITEMS.filter((it) => !it.groupId && it.storage === "fridge"),
-  freezer: ALL_ITEMS.filter((it) => !it.groupId && it.storage === "freezer"),
-  pantry: ALL_ITEMS.filter((it) => !it.groupId && it.storage === "pantry"),
-};
-
-const groupsWithOrphans = [...ALL_GROUPS];
-Object.entries(orphanedByStorage).forEach(([storageKey, items]) => {
-  if (items.length === 0) return;
-  const storage = storageKey as StorageType;
-  groupsWithOrphans.push({
-    id: `ungrouped-${storage}`,
-    title: "Övrigt",
-    storage,
-    items,
-  });
-});
-
-export const MOCK_DATA: Record<StorageType, CategoryGroup[]> = (() => {
-  const map: Record<StorageType, CategoryGroup[]> = {
-    fridge: [],
-    freezer: [],
-    pantry: [],
-  };
-
-  groupsWithOrphans.forEach((group) => {
-    if (!map[group.storage]) return;
-    map[group.storage].push(group);
-  });
-
-  return map;
-})();

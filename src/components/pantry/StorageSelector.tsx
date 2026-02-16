@@ -1,6 +1,6 @@
 import { makeStyles } from "@/hooks/makeStyles";
 import { useTheme } from "@/hooks/useTheme";
-import { StorageType } from "@/models/inventory";
+import { StorageType } from "@/models/";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
