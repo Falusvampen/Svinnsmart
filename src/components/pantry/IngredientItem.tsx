@@ -1,3 +1,4 @@
+import FuzzySlider from "@/components/ui/FuzzySlider";
 import { makeStyles } from "@/hooks/makeStyles";
 import { useTheme } from "@/hooks/useTheme";
 import { InventoryItem } from "@/models/inventory";
@@ -125,7 +126,24 @@ export const IngredientItem: React.FC<Props> = ({ item, onPress }) => {
         <Text style={[styles.amount, { color: theme.colors.textMuted }]}>
           {formatAmount(item)}
         </Text>
-        {expiryLabel ? (
+
+        {item.uiType === "volume" ? (
+          <>
+            {/* Visuell slider för "volume" (fuzzy) — persistence sparas inte här; bara UI */}
+            <FuzzySlider
+              value={
+                typeof item.packageSize === "number" && item.packageSize > 0
+                  ? (item.openedVolume ?? 0) / item.packageSize
+                  : Math.max(0, Math.min(1, item.openedVolume ?? 0))
+              }
+              onChange={(v) => {
+                // TODO: spara ändring (Firestore) — hanteras i service/hook i nästa steg
+                console.log("Fuzzy slider value for", item.inventoryId, v);
+              }}
+              labels={["Empty", "Low", "Half", "High", "Full"]}
+            />
+          </>
+        ) : expiryLabel ? (
           <View style={styles.expiryRow}>
             <View
               style={[

@@ -51,7 +51,7 @@ export interface InventoryItem extends BaseIngredient {
   openedVolume: number; // Innehåll i den öppnade förpackningen (t.ex. 500 ml)
   packageSize: number; // Storlek per förpackning (t.ex. 1 för en liter)
 
-  status: "full" | "high" | "half" | "low" | "empty";
+  status: "Ny" | "Mycket" | "Halv" | "Lite" | "Slut";
   isAvailable: boolean;
   addedAt: string;
 }
